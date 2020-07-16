@@ -60,14 +60,3 @@ If a participating cluster that was removed forcefully returns attempts to re-jo
 it will have an out of date on CRDB membership.
 The joined participating clusters reject updates sent from the removed participating cluster.
 
-## TLS Authentication and Encryption
-
-To prevent unauthorized access to your data, you can configure RS to secure communications with TLS protocol
-(the more secure successor to SSL).
-When you create CRDBs, you can specify TLS in two ways:
-
-1. [Require TLS for All Communications]({{< relref "/rs/administering/designing-production/security/tls-configuration.md#configuring-tls-for-replica-of-communication-only-on-the-source-database" >}}) -
-    This configures the CRDB to support TLS for both data access operations performed
-    on the database as well as inter-cluster CRDB communications.
-1. [Require TLS for CRDB Communications Only]({{< relref "/rs/administering/designing-production/security/tls-configuration.md#configuring-tls-for-all-communication-on-the-source-database" >}}) -
-    This configures the CRDB to support TLS for only inter-cluster CRDB communications.
