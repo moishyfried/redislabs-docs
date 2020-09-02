@@ -64,6 +64,8 @@ sudo lsblk
 
 - Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
     We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 30000 65535'.
+    
+- All your cluster's nodes run on the same OS and its version.
 
 ## Installing RS on Linux
 
