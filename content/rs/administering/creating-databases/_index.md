@@ -104,24 +104,14 @@ If you are creating a Memcached database, enter a username and password for SASL
 
 1. Configure the {{< field "db_type" >}} advanced options that you want for the database:
 
-<<<<<<< HEAD:content/rs/administering/database-operations/creating-database.md
     - **Access Control List** - You can specify the [user roles]({{< relref "/rs/security/database-security/authentication-and-authorization.md" >}}) that have access to the database
         and the [Redis ACLs]({{< relref "/rs/security/database-security/authentication-and-authorization.md#database-access-control" >}}) that apply to those connections.
-=======
-    - **Access Control List** - You can specify the [user roles]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that have access to the database
-        and the [Redis ACLs]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that apply to those connections.
->>>>>>> master:content/rs/administering/creating-databases/_index.md
 
         To define an access control list:
 
         1. In the Access control list section of the database configuration, click ![Add](/images/rs/icon_add.png#no-click "Add").
-<<<<<<< HEAD:content/rs/administering/database-operations/creating-database.md
         1. Select the [role]({{ relref "/rs/security/database-security/authentication-and-authorization.md" }}) that you want to have access to the database.
         1. Select the [ACL]({{ relref "/rs/security/database-security/authentication-and-authorization.md#database-access-control" }}) that you want the role to have in the database.
-=======
-        1. Select the [role]({{< relref "/rs/administering/access-control/user-roles.md" >}}) that you want to have access to the database.
-        1. Select the [ACL]({{< relref "/rs/administering/access-control/user-roles#database-access-control" >}}) that you want the role to have in the database.
->>>>>>> master:content/rs/administering/creating-databases/_index.md
         1. Click **Save** to save the ACL.
         1. Click **Update** to save the changes to the database.
 
