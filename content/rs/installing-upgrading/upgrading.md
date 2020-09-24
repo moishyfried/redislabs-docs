@@ -12,7 +12,7 @@ you must upgrade each of the nodes and then upgrade each of the databases in the
 {{< warning >}}
 
 - Before you upgrade, you must read the [RS 6.0 release notes]({{< relref "/rs/release-notes/rs-6-0-may-2020.md" >}}),
-including the [6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020.md#upgrade" >}}).
+including the [6.0 upgrade notes]({{< relref "/rs/release-notes/rs-6-0-may-2020#upgrade" >}}).
 - You must read the [release notes]({{< relref "/rs/release-notes/_index.md" >}}) for every version that you upgrade to.
 
 {{< /warning >}}
@@ -35,7 +35,7 @@ Using features from the newer version before all nodes are upgraded can produce 
 
 {{< /warning >}}
 
-## Upgrading a Node
+## Upgrading a node
 
 Upgrading the software on a node requires installing the [RS installation
 package]({{< relref "/rs/installing-upgrading/_index.md" >}})
@@ -45,15 +45,15 @@ on all of the machines on which RS is installed.
 
 - You must upgrade the master node before you upgrade the other nodes.
 We recommend that you plan to keep all nodes up until the upgrade is completed
-on all nodes. The node role is shown in the output of the 'rladmin status
-nodes' command.
+on all nodes. The node role is shown in the output of the `rladmin status
+nodes` command.
 - You cannot change the installation path or user during upgrade.
 - Node upgrade fails if the SSL certificates were configured in version 5.0.2 or above by manually updating the certificates on the disk instead of updating them through the API. For assistance with this issue, contact [Support](https://support.redislabs.com).
 
 {{< /warning >}}
 
 You run install.sh from the directory where you untarred the media
-just like you do for a new install. The software recognizes this is
+just like you do for a new installation. The software recognizes this is
 an upgrade and proceeds accordingly.
 
 Just like for a new installation, you must sudo or be root to do the
@@ -80,7 +80,7 @@ If you have the RS management UI open in the browser while you are
 upgrading the nodes, make sure that you refresh the browser before trying
 to work with the UI again.
 
-## Upgrading a Database
+## Upgrading a database
 
 Some RS upgrades add support for new Redis versions. In these cases,
 Redis Labs recommends that you upgrade the databases to the new Redis
@@ -98,7 +98,7 @@ To check whether your Redis database versions match the latest Redis
 version supported by RS:
 
 - In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}}),
-    run the status command.
+    run the `status` command.
     If the Redis version is not the latest supported, an indication
     appears in the command output next to the database's status.
 - In the Management UI, go to the **Cluster \> Configuration** page.
@@ -112,7 +112,7 @@ To upgrade your database:
 1. Make sure that all of the nodes in the RS cluster are [upgraded](#upgrading-nodes).
     You cannot upgrade databases before all of the nodes in the cluster are upgraded.
 1. In the [rladmin CLI]({{< relref "/rs/references/rladmin.md" >}})
-    on any node in the cluster, run this command for each database: `rladmin upgrade db <db-name>`
+    on any node in the cluster, run this command for each database: `rladmin upgrade db <database_name | database_ID>`
 
 During the database upgrade process, the database is restarted. As
 a result:
@@ -127,7 +127,7 @@ a result:
 - For databases that have neither replication nor [persistence]({{< relref "/rs/concepts/data-access/persistence.md" >}})
     enabled, the database loses all its data after it is restarted.
 
-## Upgrading Active-Active Databases {#upgrading-activeactive-databases}
+## Upgrading Active-Active databases {#upgrading-activeactive-databases}
 
 When you upgrade an Active-Active (CRDB) database, you can also upgrade:
 
@@ -167,7 +167,7 @@ To upgrade a CRDB instance:
 1. To upgrade each CRDB instance including the Redis version and CRDB protocol version, run:
 
     ```sh
-    rladmin upgrade db <crdb_name>
+    rladmin upgrade db <database_name | database_ID>
     ```
 
     If the protocol version is old, read the warning message carefully and confirm.

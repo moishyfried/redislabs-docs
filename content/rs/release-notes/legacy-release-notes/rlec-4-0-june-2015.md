@@ -23,7 +23,7 @@ update this file.
     multiple AWS regions.
 - Support for additional browsers and operating systems for the
     management UI.
-- Replica of feature which enables creating a Redis database that
+- Replica Of feature which enables creating a Redis database that
     keeps synchronizing data from another Redis database.
 - Rack-zone awareness feature which enables mapping nodes to
     racks/zones to ensure a more sophisticated high-availability
@@ -81,7 +81,7 @@ update this file.
     awareness compliance.
 - **Issue**: In case you deploy a cluster and use the DNS option for
     the cluster name (see details in [How to set the Cluster Name
-    (FQDN)]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
+    (FQDN)]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}),
     do not configure the DNS entries for the cluster nodes, and try to
     configure a database that is a replica of another database within
     the cluster, then the UI allows you to configure the source database
@@ -92,7 +92,7 @@ update this file.
     the cluster does not operate correctly. You have to either update
     the DNS accordingly, or recreate the cluster and use the mDNS option
     for the cluster name as described in [How to set the Cluster Name
-    (FQDN)]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}).
+    (FQDN)]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}).
 - **Issue**: When taking a node offline or removing a node, if the
     node being taken offline or removed is currently serving as the web
     server for the web browser being used to view the management UI,

@@ -23,12 +23,12 @@ information, check the ['network port
 configurations']({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})
 page
 
-## New Features
+## New features
 
 ### CRDBs
 
-- The ability to add and remove Participating Clusters from a CRDB
-- Communications between Participating Clusters can be encrypted using
+- The ability to add and remove participating clusters from a CRDB
+- Communications between participating clusters can be encrypted using
     SSL/TLS
 - Imports can be done to an existing database without flushing the
     existing data beforehand.
@@ -46,7 +46,7 @@ page
 - Starting from version 5.0.2 build #30, Redis Enterprise Software is
     supported on RHEL 7.5
 
-## Important Fixes
+## Important fixes
 
 - RS16153 -- Supervisord version update
 - RS16667 - Fixed issue with 'rladmin status' timeout
@@ -72,7 +72,7 @@ page
 - RS19852- Fixed proxy crash which might happen for SSL-enabled
     DBs
 
-## Known Limitations
+## Known limitations
 
 - Since Redis Enterprise CRDBs have counters, unlike traditional Redis
     databases, they must be handled differently when importing. There is

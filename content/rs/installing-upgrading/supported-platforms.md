@@ -19,8 +19,8 @@ Make sure your system meets these requirements:
 
 | **Platform** | **Versions/Information** |
 |------------|-----------------|
-| Ubuntu | 14.04, 16.04, 18.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
-| RHEL/CentOS 6 |  6.7, 6.8, 6.9 |
+| Ubuntu | 14.04 (Support ends on November 30, 2020)<br>16.04, 18.04<br>Server version is recommended for production installations. Desktop version is only recommended for development deployments. |
+| RHEL/CentOS 6 | 6.7, 6.8, 6.9 (Support ends on November 30, 2020) |
 | RHEL/CentOS 7 | 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8<br>Requires OpenSSL 1.0.2 and [firewall configuration]({{< relref "/rs/installing-upgrading/configuring/centos-rhel-7-firewall.md" >}}) |
 | Oracle Linux 6 | Based on the corresponding RHEL version |
 | Oracle Linux 7 | Based on the corresponding RHEL version |
@@ -39,7 +39,7 @@ You also need to ensure that each Redis Enterprise shard is pinned to a specific
 
 If you must manually migrate a virtual machine to another host, please ensure that you follow the best practices for shard maintenance, and contact support if you have questions.
 
-## VMware Limitations
+## VMware limitations
 
 Please note that Redis Enterprise is not compatible with VMware VMotion at this time. To use Redis Enterprise on VMware, you must disable VMotion.
 

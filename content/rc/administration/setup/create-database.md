@@ -34,11 +34,11 @@ Once you have a subscription, you can easily create a database in Redis Cloud by
         - Enable [OSS Cluster API]({{< relref "/rs/concepts/data-access/oss-cluster-api.md" >}})
             to expose the cluster topology to your application.
         - Select **Use external endpoint** to let clients connect to the OSS cluster API throught the external endpoint.
-    - **Replica Of** - You can enable [Replica Of]({{< relref "/rs/administering/active-passive.md" >}})
+    - **Replica Of** - You can enable [Replica Of]({{< relref "/rs/administering/designing-production/active-passive.md" >}})
         and select the endpoint of a database to hold a copy of the data.
 
         {{< note >}}
-You must configure [VPC Peering]({{< relref "/rc/administration/setup/edit-subscription.md#vpc-peering" >}})
+You must configure [VPC Peering]({{< relref "/rc/administration/setup/edit-subscription#vpc-peering" >}})
 between the VPC that this database is on and the VPC that the destination database is on.
         {{< /note >}}
 

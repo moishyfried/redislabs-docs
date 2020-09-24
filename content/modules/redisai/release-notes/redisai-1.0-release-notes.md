@@ -5,6 +5,23 @@ weight: 100
 alwaysopen: false
 categories: ["Modules"]
 ---
+## RedisAI 1.0.1 (July 2020)
+
+This is a maintenance release for version 1.0.
+
+Headlines:
+
+- This release improves overall stability and provides fixes for issues found after the previous release.
+
+Details:
+
+- Bug Fixes:
+
+    - [7f87f85](https://github.com/RedisAI/RedisAI/commit/7f87f8534e70927d67f99b35dc6a97156761587f) Allow inconsistent zero batch outputs.
+    - #[385](https://github.com/RedisAI/RedisAI/pull/385),#[382](https://github.com/RedisAI/RedisAI/pull/382) [AI.SCRIPTRUN](https://oss.redislabs.com/redisai/commands/#aiscriptrun) results were being replicated twice.
+    - #[384](https://github.com/RedisAI/RedisAI/pull/384) AI.MODELGET to return *inputs*, *outputs*, *batchsize*, and *minbatchsize*.
+    - #[412](https://github.com/RedisAI/RedisAI/pull/412) Several memory leaks.
+
 ## RedisAI 1.0.0 (May 2020)
 
 Supported Backends:
@@ -14,7 +31,7 @@ Supported Backends:
 - PyTorch 1.5
 - ONXXRuntime 1.2.0
 
-New Features:
+New features:
 
 - [#241](https://github.com/RedisAI/RedisAI/pull/241), [#270](https://github.com/RedisAI/RedisAI/pull/270) auto-batching support. Requests from multiple clients can be automatically and transparently batched in a single request for increased CPU/GPU efficiency during serving.
 - [#322](https://github.com/RedisAI/RedisAI/pull/322) Add [AI.DAGRUN](https://oss.redislabs.com/redisai/commands/#aidagrun). With the new AI.DAGRUN (DAG as in direct acycilc graph) command we support the prescription of combinations of other AI.* commands in a single execution pass, where intermediate keys are never materialised to Redis.

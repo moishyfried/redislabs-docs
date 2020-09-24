@@ -50,7 +50,7 @@ We support Redis Cloud, Redis Cloud Pro, AWS Elasticache and Azure Redis Cache. 
 
 {{< /expand-control >}}
 
-## Memory Analysis
+## Memory analysis
 
 {{< expand-control >}}
 {{% expand "How long does the memory analysis take?" %}}
@@ -109,21 +109,21 @@ Our licensing works on the sum of used memory on the redis instances you have ad
 
 {{< /expand-control >}}
 
-## License and Support
+## License and support
 
 {{< expand-control >}}
 
 {{% expand "Is RedisInsight a free tool?" %}}
-Yes, RedisInsight is available as a non-commercial, free of charge tool. You can review the terms of use in the [RedisInsight Licence Terms](https://redislabs.com/redis-insight-license-terms) document.
+Yes, RedisInsight is available as a non-commercial, free of charge tool. You can review the terms of use in the [RedisInsight Licence Terms](https://redislabs.com/wp-content/uploads/2019/10/RedisInsight-EULA-terms.pdf) document.
 {{% /expand %}}
 
 {{% expand "Where can I find the licence terms of RedisInsight?" %}}
-See the official [RedisInsight Licence Terms](https://redislabs.com/redis-insight-license-terms) document.
+See the official [RedisInsight Licence Terms](https://redislabs.com/wp-content/uploads/2019/10/RedisInsight-EULA-terms.pdf) document. 
 {{% /expand %}}
 
 {{< /expand-control >}}
 
-## Privacy and Security
+## Privacy and security
 
 {{< expand-control >}}
 

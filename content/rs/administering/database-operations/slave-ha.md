@@ -6,7 +6,7 @@ alwaysopen: false
 categories: ["RS"]
 ---
 When you enable [database replication]({{< relref "/rs/concepts/high-availability/replication.md" >}}) for your database,
-RS replicates your data to a slave node to make sure that your data is highly available.
+Redis Enterprise Software replicates your data to a slave node to make sure that your data is highly available.
 If the slave node fails or if the master node fails and the slave is promoted to master,
 the remaining master node is a single point of failure.
 
@@ -34,7 +34,7 @@ For example:
 - Slave HA migrates as many shards as possible based on available DRAM in the target node. When no DRAM is available, slave HA stops migrating slave shards to that node.
 {{< /note >}}
 
-## Configuring High Availability for Slave Shards
+## Configuring high availability for slave shards
 
 Using rladmin or the REST API, slave HA is controlled on the database level and on the cluster level.
 You can enable or disable slave HA for a database or for the entire cluster.
@@ -58,18 +58,18 @@ To disable slave HA for a specific database using rladmin, run:
 
     rladmin tune db <bdb_uid> slave_ha disabled
 
-## Slave HA Configuration Options
+## Slave HA configuration options
 
 You can see the current configuration options for slave HA with: `rladmin info cluster`
 
-### Grace Period
+### Grace period
 
 By default, slave HA has a 10-minute grace period after node failure and before new slave shards are created.
 To configure this grace period from rladmin, run:
 
     rladmin tune cluster slave_ha_grace_period <time_in_seconds>
 
-### Shard Priority
+### Shard priority
 
 Slave shard migration is based on priority so that, in the case of limited memory resources,
 the most important slave shards are migrated first.
@@ -84,11 +84,11 @@ Slave HA migrates slave shards for databases according to this order of priority
 rladmin tune db <bdb_uid> slave_ha_priority <positive integer>
     ```
 
-1. CRDBs - The CRDB synchronization uses slave shards to synchronize between the replicas.
+1. Active-Active databases - Active-Active database synchronization uses slave shards to synchronize between the replicas.
 1. Database size - It is easier and more efficient to move slave shards of smaller databases.
 1. Database UID - The slave shards of databases with a higher UID are moved first.
 
-### Cooldown Periods
+### Cooldown periods
 
 Both the cluster and the database have cooldown periods.
 After node failure, the cluster cooldown period prevents another slave migration due to another node failure for any
@@ -115,6 +115,6 @@ rladmin tune cluster slave_ha_bdb_cooldown_period <time_in_seconds>
 
 The following alerts are sent during slave HA activation:
 
-- Shard migration begins after the grace period
-- Shard migration fails because there is no available node (Sent hourly)
-- Shard migration is delayed because of the cooldown period
+- Shard migration begins after the grace period.
+- Shard migration fails because there is no available node (Sent hourly).
+- Shard migration is delayed because of the cooldown period.

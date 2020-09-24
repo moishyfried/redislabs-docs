@@ -10,10 +10,10 @@ aliases: /rs/administering/installing-upgrading/configuring/mdns/
 mDNS is only supported for development and testing environments.
 {{< /note >}}
 
-If you choose to use the mDNS protocol when [you set the cluster name]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}),
+If you choose to use the mDNS protocol when [you set the cluster name]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}),
 make sure that the configurations and prerequisites for resolving database endpoints are met on the client machines.
-If you have [Active-Passive]({{< relref "/rs/administering/active-passive.md" >}}) databases on the cluster,
-the configurations and prerequisites are also required for the Redis Enterprise Software (RS) nodes.
+If you have [Active-Passive]({{< relref "/rs/administering/designing-production/active-passive.md" >}}) databases on the cluster,
+the configurations and prerequisites are also required for the Redis Enterprise Software nodes.
 
 To prepare a client or node for mDNS:
 

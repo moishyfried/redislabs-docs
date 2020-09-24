@@ -1,5 +1,5 @@
 ---
-Title: Removing a Node
+Title: Removing a Cluster Node
 description:
 weight: $weight
 alwaysopen: false
@@ -8,16 +8,14 @@ categories: ["RS"]
 There are various reasons why you may want to remove a node in Redis
 Enterprise Software (RS):
 
-- You no longer need the extra capacity, meaning you want to
-    permanently remove the node.
+- You no longer need the extra capacity, meaning you want to permanently remove the node.
 - You would like to replace a faulty node with a healthy node.
 - You would like to replace a healthy node with a different node.
 
 The following section explains how each of these actions can be
 achieved, as well as their impact and considerations.
 
-You can choose to receive email alerts related to this process, as
-described in [Managing cluster alerts]({{< relref "/rs/administering/cluster-operations/settings/alerts.md" >}}).
+You can configure [email alerts from the cluster]({{< relref "/rs/administering/monitoring-metrics/_index.md#cluster-alerts" >}}) to notify you of cluster changes, including when a node is removed.
 
 **Make sure to read through these explanations thoroughly before taking
 any action.**
@@ -59,13 +57,13 @@ must first add the new node to the cluster, migrate all the resources
 from the node you would like to remove, and only then remove the node.
 
 For further guidance, refer to [adding a new node to a
-cluster]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}).
+cluster]({{< relref "/rs/administering/adding-node.md" >}}).
 
 You can migrate resources by using the *rladmin* command-line interface
 (CLI). For guidelines, refer to [*rladmin* command line interface
 (CLI)]({{< relref "/rs/references/rladmin.md" >}}).
 
-**Note**: The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-name-dns-connection-management/_index.md" >}}) must be updated each time a node is added or
+**Note**: The [DNS records]({{< relref "/rs/installing-upgrading/configuring/cluster-dns/_index.md" >}}) must be updated each time a node is added or
 replaced.
 
 ## Removing a node

@@ -1,17 +1,17 @@
 ---
 Title: Redis Enterprise Software Product Lifecycle
 description:
-weight: $weight
+weight: 100
 alwaysopen: false
 categories: ["RS"]
 ---
-You can view the Redis Enterprise Software subscription agreement [here](https://redislabs.com/wp-content/uploads/2019/11/redis-enterprise-software-subscription-agreement.pdf).
+You can view the Redis Enterprise Software (RS) subscription agreement [here](https://redislabs.com/wp-content/uploads/2019/11/redis-enterprise-software-subscription-agreement.pdf).
 This Product Lifecycle fully reflects our subscription agreement.
 However, for any discrepancy between the two policies, the subscription agreement prevails.
 
 Redis Enterprise modules follow the [modules lifecycle]({{< relref "/modules/modules-lifecycle.md" >}}).
 
-## Release Numbering
+## Release numbering
 
 Redis Labs uses a four-place numbering scheme to designate released versions of its products.
 The format is “Major1.Major2.Minor-Build”.
@@ -28,7 +28,7 @@ The format is “Major1.Major2.Minor-Build”.
 
 Redis Enterprise Software typically gets 2 major releases every year but the product shipping cycles may vary.
 
-## End-of-Life Schedule {#endoflife-schedule}
+## End-of-life schedule {#endoflife-schedule}
 
 End-of-Life for a given Major release occurs 18 months after the formal release of
 that version.

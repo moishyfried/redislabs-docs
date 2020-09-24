@@ -13,7 +13,7 @@ is critical. Therefore, Redis Enterprise Software supports persisting data to di
 [Persistence](https://redislabs.com/redis-enterprise/technology/durable-redis-2/) can be configured either at time of database creation or by editing an existing
 database's configuration. While the persistence model can be changed dynamically, just know that it can take time for your database to switch from one persistence model to the other. It depends on what you are switching from and to, but also on the size of your database.
 
-## Options for Configuring Data Persistence
+## Options for configuring data persistence
 
 There are six options for persistence in Redis Enterprise Software:
 
@@ -56,7 +56,7 @@ performed on the database slave and does not impact performance on the master.
 1. Snapshot, every 12 hour - Sets a full backup every 12 hours.
 1. None - Does not backup or persist data at all.
 
-## Append Only File (AOF) vs Snapshot (RDB)
+## Append only file (AOF) vs snapshot (RDB)
 
 Now that you know the available options, to assist in making a decision
 on which option is right for your use case, here is a table about the
@@ -69,6 +69,7 @@ two:
 |  Slower time to recover (Larger files) | Faster recovery time |
 |  More disk space required (files tend to grow large and require compaction) | Requires less resource (I/O once every several hours and no compaction required) |
 
+<<<<<<< HEAD
 ## Configuring persistence for your database
 
 1. In **databases**, either:
@@ -81,6 +82,9 @@ two:
 {{< video "/images/rs/persistence.mp4" "Persistence" >}}
 
 ## Data Persistence and Redis on Flash
+=======
+## Data persistence and Redis on Flash
+>>>>>>> master
 
 If you are enabling data persistence for databases running on Redis
 Enterprise Flash, by default both master and slave shards are

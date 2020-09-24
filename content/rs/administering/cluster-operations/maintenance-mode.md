@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-When you need to do hardware or operating system maintenance on a server that hosts an RS node,
+When you need to do hardware or operating system maintenance on a server that hosts an Redis Enterprise Software (RS) node,
 it is important that you move all of the shards on that node to another node to protect the data.
 You can use maintenance mode to handle this process simply and efficiently.
 
@@ -40,7 +40,7 @@ node:2    slave    172.17.0.4                         rp3_node1   0/0
 node:3    slave    172.17.0.3                         rp2_node1   2/100
 ```
 
-## Turning Maintenance Mode ON
+## Turning maintenance mode ON
 
 When you turn maintenance mode on, RS:
 
@@ -98,7 +98,7 @@ To demote a master node when you turn on maintenance mode:
 rladmin node <node_id> maintenance_mode on demote_node
 ```
 
-## Turning Maintenance Mode OFF
+## Turning maintenance mode OFF
 
 When you turn maintenance mode off, RS:
 

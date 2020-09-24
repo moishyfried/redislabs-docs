@@ -7,25 +7,25 @@ aliases: /rs/getting-started/creating-database/crdbs/
          /rs/getting-started/getting-started-crdbs/
 categories: ["RS"]
 ---
-In this guide, we'll set up an Active-Active database, also known as CRDB (Conflict-free
+In this guide, we'll set up an Active-Active database, formerly known as CRDB (Conflict-free
 Replicated DataBase) spanning across two Redis Enterprise Software
 clusters for test and development environments. Here are the steps:
 
-- Step 1: Run two RS Docker containers
+- Step 1: Run two Redis Enterprise Software (RS) Docker containers
 - Step 2: Set up each container as a cluster
-- Step 3: Create a new Redis Enterprise CRDB
-- Step 4: Test connectivity to the CRDB
+- Step 3: Create a new Redis Enterprise Active-Active database
+- Step 4: Test connectivity to the Active-Active database
 
-To run a CRDB on installations from the [RS download package]({{< relref "/rs/getting-started/_index.md" >}}),
+To run an Active-Active database on installations from the [RS download package]({{< relref "/rs/getting-started/_index.md" >}}),
 set up two RS installations and continue from Step 2.
 
 {{< note >}}
 This getting started guide is for development or demonstration environments.
-To set up CRDB in a production environment, use the instructions for
-[creating a CRDB]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}).
+To set up an Active-Active database in a production environment, use the instructions for
+[creating an Active-Active database]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}).
 {{< /note >}}
 
-## Step 1: Run Two Containers
+## Step 1: Run two containers
 
 To spin up two RS containers, run these commands:
 
@@ -41,7 +41,7 @@ The **-p** options map the web UI port (8443), REST API port (9443), and
 database access port differently for each container to make sure that all
 containers can be accessed from the host OS that is running the containers.
 
-## Step 2: Setup Two Clusters
+## Step 2: Setup two clusters
 
 1. For cluster 1, direct your browser to **https://localhost:8443** on the
 host machine to see the Redis Enterprise Software web console. Simply
@@ -78,7 +78,7 @@ Repeat the same operations for cluster 2 with these differences:
 Now we have two Redis Enterprise Software clusters with FQDNs
 **cluster1.local** and **cluster2.local**.
 
-## Step 3: Create a Redis CRDB
+## Step 3: Create a Redis Active-Active database
 
 1. After you login to cluster1.local, select the Redis database and deployment type
 **Geo-Distributed**. Then click **Next**.
@@ -103,9 +103,9 @@ Now we have two Redis Enterprise Software clusters with FQDNs
         that the [Multi-key commands]({{< relref "/rs/concepts/high-availability/clustering.md" >}})
         limitations do not apply.
 
-        Note: You cannot enable or disable database clustering after the CRDB is created.
+        Note: You cannot enable or disable database clustering after the Active-Active database is created.
 
-1. Click **Activate** to create your CRDB.
+1. Click **Activate** to create your Active-Active database.
 
     ![crdb-activate](/images/rs/crdb-activate.png)
 
@@ -114,10 +114,10 @@ Now we have two Redis Enterprise Software clusters with FQDNs
     make sure that Docker has enough memory allocated in the Advanced section
     of Docker Settings.
 
-1. After the CRDB is created, you can now visit each cluster 1 at
+1. After the Active-Active database is created, you can now visit each cluster 1 at
 https://localhost:8443 and cluster 2 at https://localhost:8445.
 
-1. Make sure that each cluster has a CRDB member database with the name `database1`.
+1. Make sure that each cluster has an Active-Active database member database with the name `database1`.
 
     In a real-world deployment, cluster 1 and cluster 2 would most likely be
     in separate data centers in different regions. However, for
@@ -125,7 +125,7 @@ https://localhost:8443 and cluster 2 at https://localhost:8445.
     local clusters running on the same host.
 
 <!-- Also in getting-started-crdbs.md -->
-## Step 4: Test the Connection to your Member Redis CRDBs
+## Step 4: Test the connection to your member Redis Active-Active databases
 
 With the Redis database created, you are ready to connect to your
 database to store data. You can use one of the following ways to test
@@ -134,13 +134,13 @@ connectivity to your database:
 - Connect with redis-cli, the built-in command-line tool
 - Connect with a _Hello World_ application written in Python
 
-Remember we have two member CRDBs that are available for connections and
-concurrent reads and writes. The member CRDBs are using bi-directional
-replication to for the global CRDB.
+Remember we have two member Active-Active databases that are available for connections and
+concurrent reads and writes. The member Active-Active databases are using bi-directional
+replication to for the global Active-Active database.
 
 ![crdb-diagram](/images/rs/crdb-diagram.png)
 
-### Connecting Using redis-cli {#connecting-using-rediscli}
+### Connecting using redis-cli {#connecting-using-rediscli}
 
 redis-cli is a simple command-line tool to interact with redis database.
 
@@ -186,7 +186,7 @@ redis-cli is a simple command-line tool to interact with redis database.
     "123"
     ```
 
-### Connecting Using _Hello World_ Application in Python
+### Connecting using _Hello World_ application in Python
 
 A simple python application running on the host machine can also connect
 to the database.

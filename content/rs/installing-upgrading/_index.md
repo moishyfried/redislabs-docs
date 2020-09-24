@@ -1,5 +1,5 @@
 ---
-Title: Installing Redis Enterprise Software
+Title: Installation
 description:
 weight: 35
 alwaysopen: false
@@ -62,7 +62,7 @@ sudo lsblk
 1. Run: `sudo service systemd-resolved restart`
     {{% /expand %}}
 
-- Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}})).
+- Make sure that the OS is not using ports in the [range that Redis assigns to databases]({{< relref "/rs/administering/designing-production/networking/port-configurations.md" >}}).
     We recommend that you restrict the OS from using Redis ports range in `/etc/sysctl.conf` with `net.ipv4.ip_local_port_range = 30000 65535'.
 
 ## Installing RS on Linux
@@ -116,11 +116,11 @@ To install RS without answering the installation questions, either:
     RS is now installed on the node.
     Repeat this process for each node in the cluster.
 
-1. [Create]({{< relref "/rs/administering/cluster-operations/new-cluster-setup.md" >}})
-    or [join]({{< relref "/rs/administering/cluster-operations/adding-node.md" >}}) an existing RS cluster.
-1. [Create a database]({{< relref "/rs/administering/database-operations/creating-database.md" >}}).
+1. [Create]({{< relref "/rs/administering/new-cluster-setup.md" >}})
+    or [join]({{< relref "/rs/administering/adding-node.md" >}}) an existing RS cluster.
+1. [Create a database]({{< relref "/rs/administering/creating-databases/_index.md" >}}).
 
-    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/database-operations/create-active-active.md" >}}) database.
+    For geo-distributed Active-Active replication, create an [Active-Active]({{< relref "/rs/administering/creating-databases/create-active-active.md" >}}) database.
 
 ### Custom installation directories
 
@@ -220,7 +220,7 @@ These installation questions are:
 
 - **Installation verification (rlcheck)** - `Would you like to run rlcheck to verify proper configuration? [Y/N]?`
 
-    We recommend that you run the `rlckeck` installation verification to make sure that the installation completed succesfully.
+    We recommend that you run the `rlckeck` installation verification to make sure that the installation completed successfully.
     If you want to run this verification at a later time, you can run: `/opt/redislabs/bin/rlcheck`
 
 ### Installation answer file

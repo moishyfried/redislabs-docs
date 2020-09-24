@@ -43,7 +43,7 @@ This lets a user specify the minimum desired state.
 Once the database is created, it is exposed with the same service mechanisms by the service rigger for the Redis Enterprise cluster.
 If the database custom resource is deleted, the database is deleted from the cluster and its services are also deleted.
 
-## Database Lifecycle
+## Database lifecycle
 
 ### Creating databases
 
@@ -110,7 +110,7 @@ To delete a database, run:
 kubectl delete redb/mydb
 ```
 
-## Connecting to Database
+## Connecting to databases
 
 After the database controller creates a database, the services for accessing the database are created in the same namespace.
 Connection information for the database is stored in a secret.
@@ -185,7 +185,7 @@ kubectl port-forward guestbook-667fcbf6f6-gztjv 8080:80
 Browse to `http://localhost:8080/` to view the demonstration.
 
 
-## Options for Databases
+## Options for databases
 
 The database options are specified in the `spec` section of the database custom resource.
 These options include options that you can change and options that are created by the controller for applications or developers. For example, the database connection information is stored in a secret.
@@ -241,11 +241,11 @@ The value is a keyword with the values:
 | Value | Description |
 | ----- | ----------- |
 | disabled | Data is not persisted (default) |
-| AofEverySecond | Data is synced to disk every second |
-| AofAlways | Data is synced to disk with every write. |
-| SnapshotEveryHour | A snapshot of the database is created every hour |
-| SnapshotEvery6Hour | A snapshot of the database is created every 6 hours. |
-| SnapshotEvery12Hour | A snapshot of the database is created every 12 hours. |
+| aofEverySecond | Data is synced to disk every second |
+| aofAlways | Data is synced to disk with every write. |
+| snapshotEvery1Hour | A snapshot of the database is created every hour |
+| snapshotEvery6Hour | A snapshot of the database is created every 6 hours. |
+| snapshotEvery12Hour | A snapshot of the database is created every 12 hours. |
 
 ### `rackAware`
 

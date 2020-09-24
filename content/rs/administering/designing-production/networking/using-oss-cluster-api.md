@@ -16,12 +16,12 @@ Before you enable Redis OSS Cluster API, make sure that:
 - The database proxy policy does not use node `include` or `exclude`.
 
 When you enable Redis OSS Cluster API,
-[multi-key commands]({{< relref "/rc/concepts/clustering.md#multikey-operations" >}}) are only allowed when all keys are mapped to the same slot.
-To verify that your database meets this requirement, make sure that the `CLUSTER KEYSLOT` reply is the same for all keys in the [multi-key command]({{< relref "/rs/concepts/high-availability/clustering.md#multikey-operations" >}}).
+[multi-key commands]({{< relref "/rc/concepts/clustering#multikey-operations" >}}) are only allowed when all keys are mapped to the same slot.
+To verify that your database meets this requirement, make sure that the `CLUSTER KEYSLOT` reply is the same for all keys in the [multi-key command]({{< relref "/rs/concepts/high-availability/clustering#multikey-operations" >}}).
 
-## Enabling OSS Cluster API Support from the Web UI
+## Enabling OSS Cluster API support from the web UI
 
-To configure an RS database to use the OSS Cluster API from the Web UI:
+To configure an Redis Enterprise Software (RS) database to use the OSS Cluster API from the Web UI:
 
 1. Go to: **databases**
 1. Either:
@@ -35,7 +35,7 @@ The Redis OSS Cluster API setting applies to the specified database only, not to
     - For an existing database, click **Update**.
     - For a new database, configure the database settings and click **Activate**.
 
-## Enabling OSS Cluster API Support from the Command Line
+## Enabling OSS Cluster API support from the command line
 
 To configure an RS database, including Replica Of databases, to use the OSS Cluster API from the command line:
 
@@ -53,17 +53,18 @@ To configure an RS database, including Replica Of databases, to use the OSS Clus
     ```sh
     rladmin tune db <database name or ID> oss_cluster enabled
     ```
+
     {{< note >}}
 The Redis OSS Cluster API setting applies to the specified database only, not to the entire cluster.
     {{< /note >}}
 
 To disable OSS Cluster API with rladmin, run: `rladmin tune db <database name or ID> oss_cluster disable`
 
-## Managing OSS Cluster API Support for Active-Active databases from the Command Line
+## Managing OSS Cluster API support for Active-Active databases from the command line
 
-To configure an RS Active-Active database to use the OSS Cluster API from the command line:
+To configure an RS Active-Active database (formerly known as CRDB) to use the OSS Cluster API from the command line:
 
-1. To create a CRDB with OSS Cluster API, run:
+1. To create an Active-Active database with OSS Cluster API, run:
 
     ```sh
     crdb-cli crdb create --name <name> --memory-size 10g --port <port>
@@ -73,7 +74,7 @@ To configure an RS Active-Active database to use the OSS Cluster API from the co
     --instance fqdn=<fqdn>,username=<username>,password=<pass>
     ```
 
-1. To get the CRDB-GUID for your CRDB, run:
+1. To get the CRDB-GUID for your Active-Active database, run:
 
     ```sh
     $ crdb-cli crdb list
@@ -81,14 +82,14 @@ To configure an RS Active-Active database to use the OSS Cluster API from the co
     2d26de9a-4ed5-404d-a543-459eadf76ce2  Database1  1        cluster1.local
     ```
 
-1. To enable the OSS Cluster API for the CRDB, run:
+1. To enable the OSS Cluster API for the Active-Active database, run:
 
     ```sh
     crdb-cli crdb update --crdb_guid <guid> --oss-cluster true
     ```
 
     {{< note >}}
-The Redis OSS Cluster API setting applies to all of the instances of the CRDB.
+The Redis OSS Cluster API setting applies to all of the instances of the Active-Active database.
     {{< /note >}}
 
 To disable OSS Cluster API with rladmin, run: `crdb-cli crdb update --crdb_guid <guid> --oss-cluster false`

@@ -4,7 +4,7 @@ weight: 10
 categories: ["RI"]
 path: auto-discover-databases/
 ---
-RedisInsight lets you automatically add Redis Enterprise Software and Redis Enterprise Cloud databases.
+RedisInsight lets you automatically add Redis Enterprise Software (RS) and Redis Enterprise Cloud databases.
 
 {{< note >}}
 For auto-discovery, Redis Enterprise Cloud databases must be in a Pro subscription.
@@ -12,7 +12,7 @@ For auto-discovery, Redis Enterprise Cloud databases must be in a Pro subscripti
 
 ## Auto-discovery for Redis Enterprise Software
 
-To automatically discover and add Redis Enterprise Software (RS) databases to RedisInsight:
+To automatically discover and add RS databases to RedisInsight:
 
 1. In RedisInsight, click **ADD REDIS DATABASE**.
 
@@ -36,7 +36,7 @@ To automatically discover and add Redis Enterprise Software (RS) databases to Re
 
     All of the databases that were successfully added are dislayed on the screen. To see the databases in the Databases page, click **VIEW DATABASES**.
 
-## Auto-discovery for Redis Enterprise Cloud Databases
+## Auto-discovery for Redis Enterprise Cloud databases
 
 To automatically discover and add Redis Enterprise Cloud (RC) databases to RedisInsight:
 
@@ -52,7 +52,7 @@ To automatically discover and add Redis Enterprise Cloud (RC) databases to Redis
 
     ![rc-step-3](/images/ri/rc-step-3.png)
 
-1. Enter the [Account Key]({{< relref "/rc/api/concepts/authentication-and-authorization.md#account-key" >}}) and the [Secret key]({{< relref "/rc/api/concepts/authentication-and-authorization.md#secret-key" >}}) associated with your Redis Enterprise Cloud account and click **SUBMIT**.
+1. Enter the [Account Key]({{< relref "/rc/api/concepts/authentication-and-authorization#account-key" >}}) and the [Secret key]({{< relref "/rc/api/concepts/authentication-and-authorization#secret-key" >}}) associated with your Redis Enterprise Cloud account and click **SUBMIT**.
 
     ![rc-step-4](/images/ri/rc-step-4.png)
 

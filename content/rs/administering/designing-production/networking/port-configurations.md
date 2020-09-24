@@ -5,7 +5,7 @@ weight: $weight
 alwaysopen: false
 categories: ["RS"]
 ---
-To make sure that RS servers can pass necessary communications between them,
+To make sure that Redis Enterprise Software (RS) servers can pass necessary communications between them,
 we recommend that all RS servers have all of the ports listed here open
 between them.
 
@@ -39,7 +39,7 @@ Connection sources are:
 - External - The traffic is from client applications or external monitoring resources
 - Active-Active - The traffic is from clusters that host Active-Active databases
 
-## Changing the Management Web UI Port
+## Changing the management web UI port
 
 If for any reason you want to use a custom port for the RS Web UI
 instead of the default port (8443), you can change the port. Before you
@@ -51,7 +51,7 @@ After you change the RS Web UI port, when you add a new node to the
 cluster you must connect to the web UI with the custom port number:
 
 `https://newnode.mycluster.example.com:`**`<nonstandard-port-number>`**
-{{% /note%}}
+{{% /note %}}
 
 To change the default port for the RS Web UI, on any node in the cluster run:
 
@@ -59,7 +59,7 @@ To change the default port for the RS Web UI, on any node in the cluster run:
 rladmin cluster config cm_port <new-port>
 ```
 
-## Disabling HTTP support for API Endpoints
+## Disabling HTTP support for API endpoints
 
 To harden deployments, you can disable the HTTP support for API endpoints that is supported by default.
 Before you disable HTTP support, make sure that you migrate any scripts or proxy configurations that use HTTP to the encrypted API endpoint
